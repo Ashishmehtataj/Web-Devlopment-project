@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="design.css">
+</head>
+<body>	
+	<form class="form" name="form">
+		<div class="screen">
+		<h1 class="hading">Calculator</h1>
+		<div>
+			<br>
+			<input type="text" name="screen" readonly class="inputarea">
+		</div>
+		<br>
+		<div>
+			<input type="button" name="clear" value="     clear     "onclick="Clear(this)" class="clearbutton">
+		</div>
+		<br>
+		<div class="inputbutton">
+			<input type="button" name="num1" value="1" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="num2" value="2" class="numbers" onclick="valueButton(this)">	
+			<input type="button" name="num3" value="3" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="plus" value="+" class="numbers" onclick="valueButton(this)">
+			<br>
+			<input type="button" name="num4" value="4" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="num5" value="5" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="num6" value="6" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="minus" value="- " class="numbers" onclick="valueButton(this)">
+			<br>
+			<input type="button" name="num7" value="7" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="num8" value="8" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="num9" value="9" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="mul" value="* " class="numbers" onclick="valueButton(this)">
+			<br>
+			<input type="button" name="num0" value="0" class="numbers" onclick="valueButton(this)">
+			<input type="button" name="div" value="/ " class="numbers"
+			onclick="valueButton(this)">
+			<input type="button" name="equl" value="        =        " class="numbers" onclick="Calculate()">
+						
+		</div>
+	</div>
+	</form>
+	<script>
+		function Clear(){
+			form.screen.value = null;
+		}
+		function valueButton(e){
+			form.screen.value += e.value;
+		}
+		function Calculate(){
+			form.screen.value = eval(form.screen.value)
+		}
+	</script>
+</body>
+</html>
